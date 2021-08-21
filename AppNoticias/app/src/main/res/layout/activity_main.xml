@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+      android:fillViewport="true" > <!--preencher toda a area do disponivel-->
+
+<androidx.constraintlayout.widget.ConstraintLayout
+
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
@@ -45,7 +53,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque imperdiet orci ac molestie. In et felis purus. Fusce vestibulum augue lorem, efficitur luctus magna aliquam et. Sed at massa convallis quam varius fermentum. Suspendisse at felis ut eros mattis auctor. Cras pretium tortor risus, vitae congue metus maximus id. Etiam cursus, ipsum eget rhoncus fringilla, turpis erat mattis"
+        android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas scelerisque imperdiet orci ac molestie. In et felis purus. Fusce vestibulum augue lorem, efficitur luctus magna aliquam et. Sed at massa convallis quam varius fermentum. Suspendisse at felis ut eros mattis auctor. Cras pretium tortor risus, vitae congue metus maximus id. Etiam cursus, ipsum eget rhoncus fringilla, turpis erat mattis nulla, et mattis ligula purus in velit. Sed consectetur, risus at congue volutpat, ligula ante porta mi, eget maximus enim elit vitae est.  Etiam eu sem rhoncus, faucibus velit at, viverra eros. Ut vitae mi felis. Nulla facilisi. Duis et vulputate urna. Mauris et sem facilisis, varius lorem sit amet, blandit lorem. Suspendisse porta libero in fringilla elementum. Quisque cursus urna nec velit pretium bibendum. Mauris suscipit dui sit amet quam iaculis, ac varius ligula laoreet. Vivamus bibendum felis consequat magna malesuada viverra"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView" />
@@ -54,21 +62,27 @@
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="PROXIMO"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:text="ANTERIOR"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toStartOf="@+id/button" />
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:layout_constraintTop_toBottomOf="@+id/textView3"
+        app:layout_constraintVertical_bias="1.0" />
 
     <TextView
         android:id="@+id/textView4"
@@ -80,3 +94,5 @@
         app:layout_constraintBaseline_toBaselineOf="@+id/button2"
         app:layout_constraintStart_toStartOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

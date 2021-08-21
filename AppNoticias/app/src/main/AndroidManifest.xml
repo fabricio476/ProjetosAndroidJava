@@ -11,7 +11,8 @@
         android:theme="@style/Theme.AppNoticias">
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="sensor">  <!-- ativar o sensor de rotação de tela (gira a tela altomatico usando o  sensor do dispositivo-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
