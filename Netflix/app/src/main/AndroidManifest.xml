@@ -11,7 +11,9 @@
         android:theme="@style/Theme.Netflix">
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:screenOrientation="sensor"> <!-- sensor de rotação de tela -->
+
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
