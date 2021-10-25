@@ -1,2 +1,2 @@
 # ProjetosAndroidJava
-Pequenos projetos dos cursos de android com java.
+Pequenos projetos do curso de android com java.
