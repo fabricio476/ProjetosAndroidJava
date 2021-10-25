@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import java.util.Random;
 
@@ -15,19 +16,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
     }
 
     //metodos do onclik dos componentes da interface
     public void sPedra(View view){
-       this.opcaoSelecionada("Pedra");
+       this.opcaoSelecionada("pedra");
 
     }
     public void sPapel(View view){
-       this.opcaoSelecionada("Papel");
+       this.opcaoSelecionada("papel");
     }
     public void sTesoura(View view){
-        this.opcaoSelecionada("Tesoura");
+        this.opcaoSelecionada("tesoura");
     }
 
 
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
 
         //pegar o coponente da interface
         ImageView imageResultado = findViewById(R.id.id_image_resultado);
+        TextView textoResultado = findViewById(R.id.id_text_result);
 
         //gerar numeros aleatorios
       int numero = new Random().nextInt(3);
@@ -57,6 +58,23 @@ public class MainActivity extends AppCompatActivity {
             case "tesoura":
                 imageResultado.setImageResource(R.drawable.tesoura);
                 break;
+
+        }
+
+        ///codigo para criar as regras do jogo
+        if( (opcaoApp == "tesoura" && opcaoSelecionada == "papel") || (opcaoApp == "papel" && opcaoSelecionada == "pedra") || (opcaoApp == "pedra" && opcaoSelecionada == "tesoura")
+        ){ //App ganhador
+
+            textoResultado.setText("Voce Perdeu! :( ");
+
+        }else if( (opcaoApp == "papel" && opcaoSelecionada == "tesoura") || (opcaoApp == "pedra" && opcaoSelecionada == "papel") || (opcaoApp == "tesoura" && opcaoSelecionada == "pedra")
+        ){//Usuario ganhador
+
+            textoResultado.setText("Voce Ganhou! : ) ");
+
+        }else{//Empate
+
+            textoResultado.setText("Empatamos! ; ) ");
 
 
         }
