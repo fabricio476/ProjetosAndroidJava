@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/id_image_resultado"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_marginTop="32dp"
@@ -28,7 +28,7 @@
         app:srcCompat="@drawable/padrao" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/id_text_result"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
@@ -36,38 +36,41 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/id_image_resultado" />
 
     <ImageView
-        android:id="@+id/imageView2"
+        android:id="@+id/id_pedra"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="42dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView3"
+        android:onClick="sPedra"
+        app:layout_constraintEnd_toStartOf="@+id/id_papel"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintTop_toBottomOf="@+id/id_text_result"
         app:srcCompat="@drawable/pedra" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/id_papel"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="42dp"
-        app:layout_constraintEnd_toStartOf="@+id/imageView4"
+        android:onClick="sPapel"
+        app:layout_constraintEnd_toStartOf="@+id/id_tesoura"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView2"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/id_pedra"
+        app:layout_constraintTop_toBottomOf="@+id/id_text_result"
         app:srcCompat="@drawable/papel" />
 
     <ImageView
-        android:id="@+id/imageView4"
+        android:id="@+id/id_tesoura"
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_marginTop="42dp"
+        android:onClick="sTesoura"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/imageView3"
-        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        app:layout_constraintStart_toEndOf="@+id/id_papel"
+        app:layout_constraintTop_toBottomOf="@+id/id_text_result"
         app:srcCompat="@drawable/tesoura" />
 </androidx.constraintlayout.widget.ConstraintLayout>
