@@ -18,7 +18,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/id_image_resultado"
         android:layout_width="140dp"
         android:layout_height="140dp"
         android:layout_marginTop="32dp"
@@ -36,7 +36,7 @@
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+        app:layout_constraintTop_toBottomOf="@+id/id_image_resultado" />
 
     <ImageView
         android:id="@+id/id_pedra"
