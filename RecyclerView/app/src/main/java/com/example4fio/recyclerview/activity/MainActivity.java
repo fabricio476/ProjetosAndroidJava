@@ -1,13 +1,19 @@
 package com.example4fio.recyclerview.activity;
 
+import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.MotionEvent;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.example4fio.recyclerview.R;
+import com.example4fio.recyclerview.RecyclerItemClickListener;
 import com.example4fio.recyclerview.adapter.Adapter;
 import com.example4fio.recyclerview.model.Filme;
 
@@ -43,27 +49,67 @@ public class MainActivity extends AppCompatActivity {
 
          recyclerView.setAdapter(adpter); //adicionado na recycler view o adpter que foi criado
 
+        recyclerView.addOnItemTouchListener(
+                new RecyclerItemClickListener(
+                        getApplicationContext(),
+                        recyclerView,
+                        new RecyclerItemClickListener.OnItemClickListener() {
+
+                            @Override
+                            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+
+
+
+                            }
+
+                            @Override //metodo para quando clicar no item curto
+                            public void onItemClick(View view, int position) {
+
+                                Filme filme = listaFilmes.get(position);
+                                Toast.makeText(getApplicationContext(),
+                                        "Item pressionado: " + filme.getTituloFilme(),
+                                        Toast.LENGTH_SHORT).show();
+
+                            }
+
+                            @Override //metodo para quando clicar no item longo
+                            public void onLongItemClick(View view, int position) {
+
+                                //classe para pegar o item que foi clicado na lista e exibir uma mensagem
+                                Toast.makeText(
+                                        getApplicationContext(),
+                                        "Click longo: " + listaFilmes.get(position).getTituloFilme(),
+                                        Toast.LENGTH_SHORT
+                                ).show();
+
+                            }
+                        }
+                )
+        );
+
+
+
     }
 
     public void criarFilmes() {
 
         Filme filme = new Filme("it: A Coisa", "Terror", "2017");
         this.listaFilmes.add(filme);
-        filme = new Filme("A mumia", "terror", "2017");
+        filme = new Filme("A Mumia", "Terror", "2017");
         this.listaFilmes.add(filme);
-        filme = new Filme("A bela e a fera", "romance", "2018");
+        filme = new Filme("A bela e a Féra", "Romance", "2018");
         this.listaFilmes.add(filme);
-        filme = new Filme("carros 3", "comédia", "2000");
+        filme = new Filme("Carros 3", "Comédia", "2000");
         this.listaFilmes.add(filme);
-        filme = new Filme("Homem-Aranha", "aventura", "1999");
+        filme = new Filme("Homem-Aranha", "Aventura", "1999");
         this.listaFilmes.add(filme);
-        filme = new Filme("Mulher maravilha", "fantasia", "2002");
+        filme = new Filme("Mulher Maravilha", "fantasia", "2002");
         this.listaFilmes.add(filme);
-        filme = new Filme("pantera negra", "ação", "2015");
+        filme = new Filme("Pantera Negra", "Ação", "2015");
         this.listaFilmes.add(filme);
-        filme = new Filme("quarteto fantastico", "acão", "2014");
+        filme = new Filme("Quarteto Fantastico", "Acão", "2014");
         this.listaFilmes.add(filme);
-        filme = new Filme("poderoso chefão", "drama", "2005");
+        filme = new Filme("Poderoso Chefão", "Drama", "2005");
         this.listaFilmes.add(filme);
     }
 
