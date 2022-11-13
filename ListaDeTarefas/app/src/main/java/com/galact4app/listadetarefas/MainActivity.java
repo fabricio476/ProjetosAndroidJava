@@ -14,6 +14,7 @@ import androidx.navigation.ui.NavigationUI;
 
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Toast;
 
 import com.galact4app.listadetarefas.databinding.ActivityMainBinding;
 
@@ -48,23 +49,27 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    @Override
+    @Override // metodo para criar o menu de opções na barra superior
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
+
+        // retorna o menu de opções criado no arquivo menu_main.xml
         getMenuInflater().inflate(R.menu.menu_main, menu);
-        return true;
+
+        return super.onCreateOptionsMenu(menu); // retorna o menu de opções criado no arquivo menu_adicionar_tarefa.xml
     }
 
-    @Override // Método que é chamado quando o usuário clica no botão de voltar do celular.
+    @Override // metodo on click dos items do menu de opções
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
 
-        //noinspection SimplifiableIfStatement
-        if (id == R.id.action_settings) {
-            return true;
+        switch (item.getItemId()) {
+
+            case R.id.action_settings:
+
+                // executar codigo
+                Toast.makeText(this, " botão settings", Toast.LENGTH_SHORT).show();
+
+                break;
+
         }
 
         return super.onOptionsItemSelected(item);
